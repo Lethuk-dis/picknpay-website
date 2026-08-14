@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pick n Pay | Enquiry</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Pick n Pay</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h1>Product &amp; Service Enquiries</h1>
+        <p>Have a question about a product, service, or in-store promotion? Send us a message below.</p>
+
+        <form class="enquiry-form" action="#" method="post">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="enquiry-type">Enquiry Type</label>
+          <select id="enquiry-type" name="enquiry-type">
+            <option value="product">Product Enquiry</option>
+            <option value="service">Service Enquiry</option>
+            <option value="promotion">Promotions &amp; Specials</option>
+            <option value="other">Other</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
