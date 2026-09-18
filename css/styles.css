@@ -345,3 +345,12 @@ img {
     max-width: 100%;
   }
 }
+
+.map-embed {
+  margin-bottom: 30px;
+}
+
+.map-embed h3 {
+  color: #003087;
+  margin-bottom: 10px;
+}
