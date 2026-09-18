@@ -9,12 +9,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #222;
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
 }
 
 a {
@@ -49,6 +56,10 @@ img {
   color: #fff;
 }
 
+.logo:hover {
+  opacity: 0.85;
+}
+
 .site-nav {
   display: flex;
   gap: 25px;
@@ -61,6 +72,15 @@ img {
 
 .site-nav a:hover {
   color: #e4002b; /* Pick n Pay cherry red */
+}
+
+.site-nav a:focus {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.site-nav a:active {
+  color: #b8001f;
 }
 
 .nav-toggle {
@@ -81,20 +101,20 @@ img {
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
   color: #003087;
 }
 
 .hero p {
   font-size: 1.1rem;
-  margin-bottom: 25px;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== Buttons ===== */
 .btn {
   display: inline-block;
-  padding: 12px 28px;
-  border-radius: 4px;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.25rem;
   font-weight: bold;
 }
 
@@ -105,6 +125,16 @@ img {
 
 .btn-primary:hover {
   background-color: #b8001f;
+}
+
+.btn-primary:focus {
+  outline: 3px solid #003087;
+  outline-offset: 2px;
+}
+
+.btn-primary:active {
+  background-color: #8f0018;
+  transform: scale(0.98);
 }
 
 /* ===== General Sections ===== */
@@ -141,6 +171,12 @@ img {
   border-radius: 6px;
   overflow: hidden;
   padding-bottom: 15px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 .service-card img {
@@ -172,6 +208,11 @@ img {
   background-color: #f9f9f9;
   border-left: 4px solid #e4002b;
   padding: 20px;
+  transition: box-shadow 0.2s ease;
+}
+
+.branch-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .map-embed {
@@ -206,6 +247,15 @@ img {
   font-size: 1rem;
 }
 
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus,
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #003087;
+  border-color: #003087;
+}
+
 .enquiry-form button,
 .contact-form button {
   margin-top: 20px;
@@ -214,16 +264,46 @@ img {
   cursor: pointer;
 }
 
+.enquiry-form button:hover,
+.contact-form button:hover {
+  opacity: 0.9;
+}
+
+.enquiry-form button:focus,
+.contact-form button:focus {
+  outline: 2px solid #003087;
+  outline-offset: 3px;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   background-color: #003087;
   color: #fff;
   text-align: center;
   padding: 25px 20px;
-  margin-top: 40px;
+  margin-top: auto;
 }
 
-/* ===== Responsive Navigation ===== */
+/* ===== Responsive: Tablet Breakpoint ===== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .branch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+/* ===== Responsive Navigation (Mobile) ===== */
 @media (max-width: 700px) {
   .nav-toggle {
     display: block;
@@ -243,5 +323,25 @@ img {
 
   .header-inner {
     flex-wrap: wrap;
+  }
+}
+
+/* ===== Responsive: Mobile Refinements ===== */
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-form,
+  .contact-form {
+    max-width: 100%;
   }
 }
