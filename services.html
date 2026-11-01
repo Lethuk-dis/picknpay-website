@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick n Pay | Services</title>
+  <title>Services &amp; Departments | Pick n Pay Fresh Produce, Bakery, Smart Shopper</title>
+  <meta name="description" content="Explore Pick n Pay departments: fresh produce, in-store bakery, fresh fruit and the Smart Shopper loyalty programme. Search our product catalogue." />
+  <meta name="author" content="Lethukuthula Khumalo" />
+  <link rel="canonical" href="https://lethuk-dis.github.io/picknpay-website/services.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Services &amp; Departments | Pick n Pay Fresh Produce, Bakery, Smart Shopper" />
+  <meta property="og:description" content="Explore Pick n Pay departments: fresh produce, in-store bakery, fresh fruit and the Smart Shopper loyalty programme. Search our product catalogue." />
+  <meta property="og:url" content="https://lethuk-dis.github.io/picknpay-website/services.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header and navigation, shared across all pages -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pick n Pay</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -22,7 +35,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container">
         <h1>Our Services &amp; Departments</h1>
@@ -30,40 +43,67 @@
 
         <div class="service-grid">
           <article class="service-card">
-            <img src="images/fresh-produce.jpg" alt="Fresh fruit and vegetables display" />
+            <img src="images/fresh-produce.jpg" alt="Fresh fruit and vegetables display" loading="lazy" />
             <h2>Fresh Produce</h2>
             <p>A wide selection of fresh fruit, vegetables, and locally sourced produce, restocked daily.</p>
           </article>
-
           <article class="service-card">
-            <img src="images/bakery.jpg" alt="Bakery bread display" />
+            <img src="images/bakery.jpg" alt="Bakery bread display" loading="lazy" />
             <h2>In-Store Bakery</h2>
             <p>Freshly baked bread, pastries, and cakes baked in-store every morning.</p>
           </article>
-
           <article class="service-card">
-            <img src="images/Fruits.jpg" alt="Fruits" />
+            <img src="images/Fruits.jpg" alt="Selection of fresh fruit" loading="lazy" />
             <h2>Fresh Fruits</h2>
-            <p>Enjoy a selection of fresh, quality fruits sourced to provide
-  customers with healthy and delicious choices every day.</p>
+            <p>Enjoy a selection of fresh, quality fruits sourced to provide customers with healthy and delicious choices every day.</p>
           </article>
-
           <article class="service-card">
-            <img src="images/smart-shopper.jpg" alt="Smart Shopper loyalty card" />
+            <img src="images/smart-shopper.jpg" alt="Smart Shopper loyalty card" loading="lazy" />
             <h2>Smart Shopper</h2>
             <p>Earn points on every purchase and unlock exclusive discounts with our loyalty programme.</p>
           </article>
         </div>
+
+        <h2>Find a product</h2>
+        <p>Search our sample catalogue, then <a href="enquiry.html">send an enquiry</a> to check availability. Prices are illustrative.</p>
+        <div class="catalogue-controls">
+          <div>
+            <label for="search">Search by name</label>
+            <input type="search" id="search" placeholder="For example: bread" autocomplete="off" />
+          </div>
+          <div>
+            <label for="category">Category</label>
+            <select id="category"><option value="">All categories</option></select>
+          </div>
+          <div>
+            <label for="sort">Sort by</label>
+            <select id="sort">
+              <option value="name">Name (A–Z)</option>
+              <option value="price-asc">Price (low to high)</option>
+              <option value="price-desc">Price (high to low)</option>
+            </select>
+          </div>
+        </div>
+        <p class="muted" id="result-count" aria-live="polite"></p>
+        <ul class="product-list" id="product-list"></ul>
       </div>
     </section>
   </main>
 
+  <!-- Footer, shared across all pages -->
   <footer class="site-footer">
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

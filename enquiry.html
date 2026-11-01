@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick n Pay | Enquiry</title>
+  <title>Enquiry | Ask Pick n Pay About Products, Services &amp; Specials</title>
+  <meta name="description" content="Ask Pick n Pay about product prices, availability, services and promotions. Fill in the enquiry form and get a response." />
+  <meta name="author" content="Lethukuthula Khumalo" />
+  <link rel="canonical" href="https://lethuk-dis.github.io/picknpay-website/enquiry.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Enquiry | Ask Pick n Pay About Products, Services &amp; Specials" />
+  <meta property="og:description" content="Ask Pick n Pay about product prices, availability, services and promotions. Fill in the enquiry form and get a response." />
+  <meta property="og:url" content="https://lethuk-dis.github.io/picknpay-website/enquiry.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header and navigation, shared across all pages -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pick n Pay</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -22,45 +35,68 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container">
         <h1>Product &amp; Service Enquiries</h1>
-        <p>Have a question about a product, service, or in-store promotion? Send us a message below.</p>
+        <p>Have a question about a product, service, or in-store promotion? Send us a message below. Fields marked * are required.</p>
 
-        <form class="enquiry-form" action="#" method="post">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+        <form class="enquiry-form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post" novalidate>
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" />
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
 
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" />
+          <label for="phone">Phone number (optional)</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="082 123 4567" />
 
-          <label for="enquiry-type">Enquiry Type</label>
-          <select id="enquiry-type" name="enquiry-type">
-            <option value="product">Product Enquiry</option>
-            <option value="service">Service Enquiry</option>
-            <option value="promotion">Promotions &amp; Specials</option>
+          <label for="enquiry-type">Enquiry type *</label>
+          <select id="enquiry-type" name="enquiry-type" required>
+            <option value="">Select an enquiry type</option>
+            <option value="product">Product enquiry</option>
+            <option value="service">Service enquiry</option>
+            <option value="promotion">Promotions &amp; specials</option>
             <option value="other">Other</option>
           </select>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <div id="product-fields" hidden>
+            <label for="product">Product *</label>
+            <select id="product" name="product"><option value="">Select a product</option></select>
+            <label for="quantity">Quantity *</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="50" value="1" inputmode="numeric" />
+          </div>
 
-          <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"></textarea>
+          <span class="char-count" aria-hidden="true"></span>
+
+          <button type="submit" class="btn btn-primary">Submit enquiry</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
+
+        <div class="result-panel" id="enquiry-result" tabindex="-1" hidden>
+          <h2>Enquiry received</h2>
+          <p id="enquiry-result-text"></p>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer, shared across all pages -->
   <footer class="site-footer">
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

@@ -3,16 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick n Pay | About Us</title>
+  <title>About Us | Pick n Pay Local Branch – History, Mission &amp; Team</title>
+  <meta name="description" content="Learn about Pick n Pay's history since 1967, our mission and vision, and the local team behind your neighbourhood branch." />
+  <meta name="author" content="Lethukuthula Khumalo" />
+  <link rel="canonical" href="https://lethuk-dis.github.io/picknpay-website/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us | Pick n Pay Local Branch – History, Mission &amp; Team" />
+  <meta property="og:description" content="Learn about Pick n Pay's history since 1967, our mission and vision, and the local team behind your neighbourhood branch." />
+  <meta property="og:url" content="https://lethuk-dis.github.io/picknpay-website/about.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header and navigation, shared across all pages -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pick n Pay</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -22,46 +35,53 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container">
         <h1>About Us</h1>
 
         <h2>Our History</h2>
         <p>
-          Pick n Pay was founded in 1967 by Raymond Ackerman in Cape Town, growing from a
-          single store into one of South Africa's leading retail chains. Our branch continues
-          that legacy, serving the local community with quality groceries and everyday
-          essentials.
+          Pick n Pay was founded in 1967 by Raymond Ackerman in Cape Town, growing from a single store into one of South Africa's leading retail chains.
+          Our branch continues that legacy, serving the local community with quality groceries and everyday essentials.
         </p>
 
-        <h2>Our Mission</h2>
-        <p>
-          To make quality food and household products accessible and affordable, while
-          building lasting relationships with the communities we serve.
-        </p>
-
-        <h2>Our Vision</h2>
-        <p>
-          To be the first choice for local shoppers by offering value, freshness, and
-          excellent service every day.
-        </p>
-
-        <h2>Our Team</h2>
-        <p>
-          Our branch is run by a dedicated team of local staff who know our customers by
-          name and take pride in keeping our shelves stocked and our service friendly.
-        </p>
+        <h2>What we stand for</h2>
+        <div class="tabs">
+          <div class="tab-list" role="tablist" aria-label="Mission, vision and team">
+            <button role="tab" id="tab-mission" aria-selected="true" aria-controls="panel-mission">Mission</button>
+            <button role="tab" id="tab-vision" aria-selected="false" aria-controls="panel-vision" tabindex="-1">Vision</button>
+            <button role="tab" id="tab-team" aria-selected="false" aria-controls="panel-team" tabindex="-1">Team</button>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-mission" aria-labelledby="tab-mission">
+            <p>To make quality food and household products accessible and affordable, while building lasting relationships with the communities we serve.</p>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-vision" aria-labelledby="tab-vision" hidden>
+            <p>To be the first choice for local shoppers by offering value, freshness, and excellent service every day.</p>
+          </div>
+          <div class="tab-panel" role="tabpanel" id="panel-team" aria-labelledby="tab-team" hidden>
+            <p>Our branch is run by a dedicated team of local staff who know our customers by name and take pride in keeping our shelves stocked and our service friendly.</p>
+          </div>
+        </div>
+        <p>Ready to visit? See our <a href="services.html">services</a> or <a href="contact.html">find a branch</a>.</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer, shared across all pages -->
   <footer class="site-footer">
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

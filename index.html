@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick n Pay | Home</title>
+  <title>Pick n Pay | Local Branch – Fresh Produce, Bakery &amp; Smart Shopper</title>
+  <meta name="description" content="Your local Pick n Pay branch in Mbombela and Barberton: fresh produce, in-store bakery, pharmacy and the Smart Shopper loyalty programme." />
+  <meta name="author" content="Lethukuthula Khumalo" />
+  <link rel="canonical" href="https://lethuk-dis.github.io/picknpay-website/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pick n Pay | Local Branch – Fresh Produce, Bakery &amp; Smart Shopper" />
+  <meta property="og:description" content="Your local Pick n Pay branch in Mbombela and Barberton: fresh produce, in-store bakery, pharmacy and the Smart Shopper loyalty programme." />
+  <meta property="og:url" content="https://lethuk-dis.github.io/picknpay-website/index.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- Header and navigation, shared across all pages -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pick n Pay</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -23,26 +35,54 @@
     </div>
   </header>
 
-  <main>
-    <!-- Hero section -->
+  <main id="main">
     <section class="hero">
       <div class="container hero-content">
         <h1>Fresh. Affordable. Local.</h1>
-        <p>Your neighbourhood Pick n Pay — quality groceries, fresh produce, and everyday essentials.</p>
-        <a href="enquiry.html" class="btn btn-primary">Get in Touch</a>
+        <p>Your neighbourhood Pick n Pay – quality groceries, fresh produce, and everyday essentials.</p>
+        <a href="enquiry.html" class="btn btn-primary">Get in touch</a>
       </div>
     </section>
 
-    <!-- Brief introduction -->
     <section class="section">
       <div class="container">
         <h2>Welcome</h2>
         <p>
-          Since 1967, Pick n Pay has been committed to making quality food and household
-          essentials accessible and affordable. Our branch proudly serves the local community
-          with fresh produce, a full-service bakery, pharmacy, and the Smart Shopper loyalty
-          programme.
+          Since 1967, Pick n Pay has been committed to making quality food and household essentials accessible and affordable.
+          Our branch proudly serves the local community with fresh produce, a full-service bakery, pharmacy, and the Smart Shopper loyalty programme.
+          Read <a href="about.html">our story</a>, browse <a href="services.html">our services</a>, or <a href="contact.html">find your nearest branch</a>.
         </p>
+
+        <h2>Quick answers</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h3><button class="accordion-trigger" id="faq-1-btn" aria-expanded="false" aria-controls="faq-1">When are you open?</button></h3>
+            <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden>
+              <p>Monday to Saturday 08:00–20:00, and Sunday 09:00–18:00. See the <a href="contact.html">contact page</a> for both branches.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3><button class="accordion-trigger" id="faq-2-btn" aria-expanded="false" aria-controls="faq-2">How does Smart Shopper work?</button></h3>
+            <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden>
+              <p>Earn points on every purchase and unlock exclusive discounts with our loyalty programme. Ask at any till to join.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3><button class="accordion-trigger" id="faq-3-btn" aria-expanded="false" aria-controls="faq-3">How do I ask about a product?</button></h3>
+            <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden>
+              <p>Use the <a href="enquiry.html">enquiry form</a> to check a product's price and availability.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2>In store</h2>
+        <p>Select a photo to see it larger.</p>
+        <ul class="gallery">
+          <li><button type="button"><img src="images/fresh-produce.jpg" alt="Fresh fruit and vegetables display" loading="lazy" /></button></li>
+          <li><button type="button"><img src="images/bakery.jpg" alt="Freshly baked bread on the bakery display" loading="lazy" /></button></li>
+          <li><button type="button"><img src="images/Fruits.jpg" alt="Selection of fresh fruit" loading="lazy" /></button></li>
+          <li><button type="button"><img src="images/smart-shopper.jpg" alt="Smart Shopper loyalty card" loading="lazy" /></button></li>
+        </ul>
       </div>
     </section>
   </main>
@@ -50,10 +90,17 @@
   <!-- Footer, shared across all pages -->
   <footer class="site-footer">
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

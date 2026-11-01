@@ -3,16 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick n Pay | Contact</title>
+  <title>Contact Us | Pick n Pay Mbombela &amp; Barberton Branches</title>
+  <meta name="description" content="Find Pick n Pay branches in Mbombela and Barberton: addresses, phone numbers, trading hours, an interactive map and a contact form." />
+  <meta name="author" content="Lethukuthula Khumalo" />
+  <link rel="canonical" href="https://lethuk-dis.github.io/picknpay-website/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us | Pick n Pay Mbombela &amp; Barberton Branches" />
+  <meta property="og:description" content="Find Pick n Pay branches in Mbombela and Barberton: addresses, phone numbers, trading hours, an interactive map and a contact form." />
+  <meta property="og:url" content="https://lethuk-dis.github.io/picknpay-website/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "Pick n Pay – Riverside Mall, Mbombela",
+    "telephone": "+27877503053",
+    "address": { "@type": "PostalAddress", "streetAddress": "Madiba Dr, Riverside Mall", "addressLocality": "Mbombela", "postalCode": "1201", "addressCountry": "ZA" },
+    "geo": { "@type": "GeoCoordinates", "latitude": -25.4557548, "longitude": 30.9547223 },
+    "openingHours": ["Mo-Sa 08:00-20:00", "Su 09:00-18:00"]
+  }
+  </script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header and navigation, shared across all pages -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="logo">Pick n Pay</a>
-      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
-      <nav class="site-nav">
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">☰ Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services</a>
@@ -22,7 +47,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="container">
         <h1>Contact Us</h1>
@@ -32,68 +57,74 @@
           <article class="branch-card">
             <h2>Branch 1</h2>
             <p><strong>Address:</strong> Madiba Dr, Riverside Mall, Mbombela, 1201</p>
-            <p><strong>Phone:</strong> 087 750 3053</p>
+            <p><strong>Phone:</strong> <a class="text-link" href="tel:+27877503053">087 750 3053</a></p>
             <p><strong>Trading Hours:</strong> Mon–Sat 08:00–20:00, Sun 09:00–18:00</p>
+            <button type="button" class="btn btn-outline" data-branch="0">Show on map</button>
           </article>
-
           <article class="branch-card">
             <h2>Branch 2</h2>
             <p><strong>Address:</strong> Shop 17, Cnr of Hillary and, Jock of the Bushveld Shopping Centre, General St, Barberton, 1300</p>
-            <p><strong>Phone:</strong> 013 712 4602</p>
+            <p><strong>Phone:</strong> <a class="text-link" href="tel:+27137124602">013 712 4602</a></p>
             <p><strong>Trading Hours:</strong> Mon–Sat 08:00–20:00, Sun 09:00–18:00</p>
+            <button type="button" class="btn btn-outline" data-branch="1">Show on map</button>
           </article>
         </div>
 
         <h2>Find Us</h2>
-<div class="map-embed">
-  <h3>Branch 1 — Mbombela</h3>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28819.813192918216!2d30.9547223!3d-25.4557548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ec29037ea223b73%3A0x3c303f972bd11004!2sPick%20n%20Pay%20RiversideMall!5e0!3m2!1sen!2sza!4v1789729935847!5m2!1sen!2sza"
-    width="100%"
-    height="350"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    title="Mbombela branch location map">
-  </iframe>
-</div>
-
-<div class="map-embed">
-  <h3>Branch 2 — Barberton</h3>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.500416678235!2d31.04928207519594!3d-25.7870599773359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ee8f8742afe5d13%3A0x7bfebff36bbcf18c!2sPick%20n%20Pay%20Family%20Store%20Barberton!5e0!3m2!1sen!2sza!4v1789730042635!5m2!1sen!2sza"
-    width="100%"
-    height="350"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    title="Barberton branch location map">
-  </iframe>
-</div>
+        <div id="map" role="region" aria-label="Map showing the Mbombela and Barberton branches">Loading map…</div>
 
         <h2>Send Us a Message</h2>
-        <form class="contact-form" action="#" method="post">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+        <form class="contact-form" id="contact-form" novalidate>
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" required minlength="2" maxlength="60" autocomplete="name" />
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="phone">Phone number (optional)</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="082 123 4567" />
 
-          <button type="submit" class="btn btn-primary">Send Message</button>
+          <label for="message-type">Message type *</label>
+          <select id="message-type" name="message-type" required>
+            <option value="">Select a message type</option>
+            <option value="General message">General message</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Complaint">Complaint</option>
+            <option value="Compliment">Compliment</option>
+          </select>
+
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500"></textarea>
+          <span class="char-count" aria-hidden="true"></span>
+
+          <button type="submit" class="btn btn-primary">Prepare email</button>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
         </form>
+
+        <div class="result-panel" id="email-preview" tabindex="-1" hidden>
+          <h2>Your email is ready</h2>
+          <pre id="email-text"></pre>
+          <a class="btn btn-primary" id="send-email" href="#">Open in my email app</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer, shared across all pages -->
   <footer class="site-footer">
     <div class="container">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
       <p>&copy; 2026 Pick n Pay. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>

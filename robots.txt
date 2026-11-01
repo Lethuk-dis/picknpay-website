@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lethuk-dis.github.io/picknpay-website/sitemap.xml
